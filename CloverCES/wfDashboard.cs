@@ -136,6 +136,7 @@ namespace CloverCES
 
         private bool Inicio()
         {
+
             bool bReturn = true;
             _lsEstacion = Global.gsEstacion;
 
