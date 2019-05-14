@@ -45,6 +45,8 @@ namespace CloverCES
         private string _lsHora = string.Empty;
         private string _lsHrReg = string.Empty;
         private bool _lbLoadFile;
+        private int _rangoInicial;
+        private int _rangoFinal;
         public wfDashboard()
         {
             InitializeComponent();
@@ -184,11 +186,17 @@ namespace CloverCES
                 else
                 {
                     wfAreaSelect Areas = new wfAreaSelect();
+                    
                     Areas.ShowDialog();
+
 
                     _lsPlanta = Areas._lsPlanta;
                     _lsArea = Areas._lsArea;
                     _lsGlobal = Areas._lsGlobal;
+                    _rangoInicial = Areas.int_lineaInicial;
+                    _rangoFinal = Areas.int_lineaFinal;
+                    
+                    
                     if (string.IsNullOrEmpty(_lsArea) && _lsGlobal == "0")
                         _lsGlobal = "1";
 
@@ -767,6 +775,8 @@ namespace CloverCES
                 string sRealGlobal = string.Empty;
                 string sCumpTotal = string.Empty;
 
+
+                
                 chtBarras1.Series[0].Points.Clear();
                 chtBarras1.Palette = ChartColorPalette.SeaGreen;
                 chtBarras1.Annotations.Clear();
@@ -795,8 +805,28 @@ namespace CloverCES
                     double dMetaGlobal = 0;
                     double dRealGlobal = 0;
 
-                    for (int x = 0; x < datos.Rows.Count; x++)
+
+                    ///////////////////////////////////////////////////
+                    int cont = 0;
+                    for (int x = 0; x <datos.Rows.Count; x++)
                     {
+                        int band = 0;
+
+                        for(int y = _rangoInicial; y <= _rangoFinal; y++)
+                        {
+                            string linea = "";
+                            if (y < 10) linea = "0" + y;
+                            else linea = y.ToString();
+
+                            if (datos.Rows[x][0].ToString().EndsWith(linea))
+                            {
+                                band = 1;
+                                break;
+                            }                            
+                        }
+
+                        if (band == 0) continue;
+
                         string sCump = datos.Rows[x][3].ToString().Trim();
                         double dCump = 0;
                         if (!double.TryParse(sCump, out dCump))
@@ -804,7 +834,7 @@ namespace CloverCES
 
                         //BARRAS
                         chtBarras1.Series[0].Points.AddXY(datos.Rows[x][0].ToString(), datos.Rows[x][3].ToString());
-                        chtBarras1.Series[0].Points[x].Label = sCump + "%";
+                        chtBarras1.Series[0].Points[cont].Label = sCump + "%";
                         chtBarras1.Series[0].Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
                         chtBarras1.ChartAreas[0].AxisX.LabelStyle.Font = new Font("Calibri", 14F, FontStyle.Bold);
                         chtBarras1.ChartAreas[0].AxisX.LabelStyle.Interval = 1;
@@ -815,16 +845,16 @@ namespace CloverCES
                         tA.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
                         double dPorcj = double.Parse(datos.Rows[x][2].ToString());
                         tA.Text = (String.Format("{0:0,0}", dPorcj));
-                        tA.SetAnchor(chtBarras1.Series[0].Points[x]);
+                        tA.SetAnchor(chtBarras1.Series[0].Points[cont]);
                         chtBarras1.Annotations.Add(tA);
                         
                         if (dCump > _ldPorcStd)
                         {
-                            chtBarras1.Series[0].Points[x].Color = Color.LightGreen;
+                            chtBarras1.Series[0].Points[cont].Color = Color.LightGreen;
                         }
                         else
                         {
-                            chtBarras1.Series[0].Points[x].Color = Color.PaleVioletRed;
+                            chtBarras1.Series[0].Points[cont].Color = Color.PaleVioletRed;
                             //chtBarras1.ChartAreas["ChartArea1"].AxisX.LabelStyle.ForeColor = Color.PaleVioletRed;
                             //chtBarras1.ChartAreas[0].AxisX[x].LabelStyle.ForeColor = Color.PaleVioletRed;
                         }
@@ -842,7 +872,13 @@ namespace CloverCES
                             dMetaGlobal += dMeta;
                         if (double.TryParse(datos.Rows[x][2].ToString(), out dReal))
                             dRealGlobal += dReal;
+
+                        cont++;
                     }
+
+                   
+  
+                    ///////////////////////////////////////////////////
 
                     sMetaGlobal = String.Format("{0:0,0}", dMetaGlobal);
                     chtBarras1.Titles.Clear();
@@ -1011,6 +1047,22 @@ namespace CloverCES
                 chtBarras1.Visible = false;
                 chtPastel.Visible = true;
             }
+        }
+
+        private void btn_lock_Click(object sender, EventArgs e)
+        {
+            if (ControlBox.Equals(false)) {
+
+                ControlBox = true;
+                btn_lock.BackgroundImage = Properties.Resources.Unlock;
+            }
+            else
+            {
+                ControlBox = false;
+                btn_lock.BackgroundImage = Properties.Resources.Padlock;
+                this.WindowState = FormWindowState.Maximized;
+            }
+          
         }
     }
 }

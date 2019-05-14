@@ -29,18 +29,30 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numUpdDown_rangoFinal = new System.Windows.Forms.NumericUpDown();
+            this.numUpdDown_rangoInicial = new System.Windows.Forms.NumericUpDown();
             this.chbGlobal = new System.Windows.Forms.CheckBox();
             this.cbbArea = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbbPlanta = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpdDown_rangoFinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpdDown_rangoInicial)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.numUpdDown_rangoFinal);
+            this.panel1.Controls.Add(this.numUpdDown_rangoInicial);
             this.panel1.Controls.Add(this.chbGlobal);
             this.panel1.Controls.Add(this.cbbArea);
             this.panel1.Controls.Add(this.label3);
@@ -48,8 +60,86 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 166);
+            this.panel1.Size = new System.Drawing.Size(325, 173);
             this.panel1.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(144, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "A";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(197, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Linea";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(53, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Linea";
+            // 
+            // numUpdDown_rangoFinal
+            // 
+            this.numUpdDown_rangoFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUpdDown_rangoFinal.Location = new System.Drawing.Point(165, 107);
+            this.numUpdDown_rangoFinal.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numUpdDown_rangoFinal.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpdDown_rangoFinal.Name = "numUpdDown_rangoFinal";
+            this.numUpdDown_rangoFinal.Size = new System.Drawing.Size(120, 22);
+            this.numUpdDown_rangoFinal.TabIndex = 6;
+            this.numUpdDown_rangoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numUpdDown_rangoFinal.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numUpdDown_rangoInicial
+            // 
+            this.numUpdDown_rangoInicial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numUpdDown_rangoInicial.Location = new System.Drawing.Point(22, 107);
+            this.numUpdDown_rangoInicial.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.numUpdDown_rangoInicial.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpdDown_rangoInicial.Name = "numUpdDown_rangoInicial";
+            this.numUpdDown_rangoInicial.Size = new System.Drawing.Size(120, 22);
+            this.numUpdDown_rangoInicial.TabIndex = 5;
+            this.numUpdDown_rangoInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numUpdDown_rangoInicial.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // chbGlobal
             // 
@@ -63,6 +153,7 @@
             this.chbGlobal.Text = "Monitor Global";
             this.chbGlobal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chbGlobal.UseVisualStyleBackColor = true;
+            this.chbGlobal.Visible = false;
             // 
             // cbbArea
             // 
@@ -73,6 +164,7 @@
             this.cbbArea.Name = "cbbArea";
             this.cbbArea.Size = new System.Drawing.Size(121, 28);
             this.cbbArea.TabIndex = 2;
+            this.cbbArea.Visible = false;
             this.cbbArea.SelectionChangeCommitted += new System.EventHandler(this.cbbArea_SelectionChangeCommitted);
             // 
             // label3
@@ -84,6 +176,7 @@
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Area:";
+            this.label3.Visible = false;
             // 
             // cbbPlanta
             // 
@@ -112,7 +205,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(292, 190);
+            this.ClientSize = new System.Drawing.Size(349, 198);
             this.Controls.Add(this.panel1);
             this.Name = "wfAreaSelect";
             this.ShowIcon = false;
@@ -123,6 +216,8 @@
             this.Load += new System.EventHandler(this.wfAreaSelect_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpdDown_rangoFinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpdDown_rangoInicial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,5 +229,10 @@
         private System.Windows.Forms.ComboBox cbbArea;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chbGlobal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numUpdDown_rangoFinal;
+        private System.Windows.Forms.NumericUpDown numUpdDown_rangoInicial;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

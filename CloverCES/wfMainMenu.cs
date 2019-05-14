@@ -29,7 +29,10 @@ namespace CloverCES
             }
 
             DataTable data = UsuarioLogica.Consultar(user);
-            Global.gsNivel = data.Rows[0]["puesto"].ToString();
+            if (data.Rows.Count > 0)
+                Global.gsNivel = data.Rows[0]["puesto"].ToString();
+            else
+                Close();
         }
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {

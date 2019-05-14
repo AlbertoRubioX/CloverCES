@@ -426,6 +426,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="if_motivation_497226.ico" />
+    <Content Include="Resources\Padlock.png" />
+    <Content Include="Resources\Unlock.png" />
     <None Include="Resources\Notiicon.png" />
     <None Include="Resources\Notiicon.bmp" />
     <None Include="Resources\ciglogo.jpg" />

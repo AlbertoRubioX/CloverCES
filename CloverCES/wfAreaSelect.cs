@@ -16,6 +16,8 @@ namespace CloverCES
         public string _lsArea;
         public string _lsPlanta;
         public string _lsGlobal;
+        public int int_lineaInicial;
+        public int int_lineaFinal;
         public wfAreaSelect()
         {
             InitializeComponent();
@@ -129,6 +131,16 @@ namespace CloverCES
                 _lsGlobal = "1";
             else
                 _lsGlobal = "0";
+
+            if(numUpdDown_rangoInicial.Value> numUpdDown_rangoFinal.Value)
+            {
+                MessageBox.Show("El rango inicial no pude ser mayor que el rango final,porfavor verifique los rangos.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Cancel = true;
+            }
+
+
+            int_lineaInicial = (int)numUpdDown_rangoInicial.Value;
+            int_lineaFinal = (int)numUpdDown_rangoFinal.Value;
         }
 
         private void cbbPlanta_KeyDown(object sender, KeyEventArgs e)
@@ -136,5 +148,7 @@ namespace CloverCES
             if (e.KeyCode == Keys.Escape)
                 Close();
         }
+
+      
     }
 }
