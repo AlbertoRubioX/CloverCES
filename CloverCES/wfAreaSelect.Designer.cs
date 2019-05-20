@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbox_selectAll = new System.Windows.Forms.CheckBox();
+            this.chbox_linean4 = new System.Windows.Forms.CheckBox();
+            this.chbox_linean3 = new System.Windows.Forms.CheckBox();
+            this.chbox_linean2 = new System.Windows.Forms.CheckBox();
+            this.chbox_linean1 = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,6 +53,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chbox_selectAll);
+            this.panel1.Controls.Add(this.chbox_linean4);
+            this.panel1.Controls.Add(this.chbox_linean3);
+            this.panel1.Controls.Add(this.chbox_linean2);
+            this.panel1.Controls.Add(this.chbox_linean1);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -60,8 +70,79 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 173);
+            this.panel1.Size = new System.Drawing.Size(325, 213);
             this.panel1.TabIndex = 1;
+            // 
+            // chbox_selectAll
+            // 
+            this.chbox_selectAll.AutoSize = true;
+            this.chbox_selectAll.Checked = true;
+            this.chbox_selectAll.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbox_selectAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbox_selectAll.Location = new System.Drawing.Point(89, 152);
+            this.chbox_selectAll.Name = "chbox_selectAll";
+            this.chbox_selectAll.Size = new System.Drawing.Size(142, 20);
+            this.chbox_selectAll.TabIndex = 14;
+            this.chbox_selectAll.Text = "Seleccionar Todas";
+            this.chbox_selectAll.UseVisualStyleBackColor = true;
+            this.chbox_selectAll.Visible = false;
+            this.chbox_selectAll.CheckedChanged += new System.EventHandler(this.chbox_selectAll_CheckedChanged);
+            // 
+            // chbox_linean4
+            // 
+            this.chbox_linean4.AutoSize = true;
+            this.chbox_linean4.Checked = true;
+            this.chbox_linean4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbox_linean4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbox_linean4.Location = new System.Drawing.Point(246, 177);
+            this.chbox_linean4.Name = "chbox_linean4";
+            this.chbox_linean4.Size = new System.Drawing.Size(77, 20);
+            this.chbox_linean4.TabIndex = 13;
+            this.chbox_linean4.Text = "Linea 34";
+            this.chbox_linean4.UseVisualStyleBackColor = true;
+            this.chbox_linean4.Visible = false;
+            // 
+            // chbox_linean3
+            // 
+            this.chbox_linean3.AutoSize = true;
+            this.chbox_linean3.Checked = true;
+            this.chbox_linean3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbox_linean3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbox_linean3.Location = new System.Drawing.Point(166, 177);
+            this.chbox_linean3.Name = "chbox_linean3";
+            this.chbox_linean3.Size = new System.Drawing.Size(77, 20);
+            this.chbox_linean3.TabIndex = 12;
+            this.chbox_linean3.Text = "Linea 33";
+            this.chbox_linean3.UseVisualStyleBackColor = true;
+            this.chbox_linean3.Visible = false;
+            // 
+            // chbox_linean2
+            // 
+            this.chbox_linean2.AutoSize = true;
+            this.chbox_linean2.Checked = true;
+            this.chbox_linean2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbox_linean2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbox_linean2.Location = new System.Drawing.Point(86, 177);
+            this.chbox_linean2.Name = "chbox_linean2";
+            this.chbox_linean2.Size = new System.Drawing.Size(77, 20);
+            this.chbox_linean2.TabIndex = 11;
+            this.chbox_linean2.Text = "Linea 32";
+            this.chbox_linean2.UseVisualStyleBackColor = true;
+            this.chbox_linean2.Visible = false;
+            // 
+            // chbox_linean1
+            // 
+            this.chbox_linean1.AutoSize = true;
+            this.chbox_linean1.Checked = true;
+            this.chbox_linean1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chbox_linean1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbox_linean1.Location = new System.Drawing.Point(3, 177);
+            this.chbox_linean1.Name = "chbox_linean1";
+            this.chbox_linean1.Size = new System.Drawing.Size(77, 20);
+            this.chbox_linean1.TabIndex = 10;
+            this.chbox_linean1.Text = "Linea 31";
+            this.chbox_linean1.UseVisualStyleBackColor = true;
+            this.chbox_linean1.Visible = false;
             // 
             // label5
             // 
@@ -194,18 +275,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 29);
+            this.label1.Location = new System.Drawing.Point(32, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Planta:";
+            this.label1.Text = "Area:";
             // 
             // wfAreaSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.ClientSize = new System.Drawing.Size(349, 198);
+            this.ClientSize = new System.Drawing.Size(358, 237);
             this.Controls.Add(this.panel1);
             this.Name = "wfAreaSelect";
             this.ShowIcon = false;
@@ -234,5 +315,10 @@
         private System.Windows.Forms.NumericUpDown numUpdDown_rangoInicial;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chbox_selectAll;
+        private System.Windows.Forms.CheckBox chbox_linean4;
+        private System.Windows.Forms.CheckBox chbox_linean3;
+        private System.Windows.Forms.CheckBox chbox_linean2;
+        private System.Windows.Forms.CheckBox chbox_linean1;
     }
 }

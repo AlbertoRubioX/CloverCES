@@ -9,12 +9,12 @@ namespace Datos
 {
     public class Conexion
     {
-        public static string cadenaConexion = ConfigurationManager.ConnectionStrings["CloverCES_Connection"].ToString();
+        public static string cadenaConexion = ConfigurationManager.ConnectionStrings["CloverCES_ConnectionDebug"].ToString();
 
         private static void Cadena()
         {
             if (string.IsNullOrEmpty(cadenaConexion))
-                cadenaConexion = "Data Source=mxni3-app-08\\MXNILOCALAPPS;Initial Catalog=cloverces;Persist Security Info=True;User ID=Sa;Password=Admin.10";
+                cadenaConexion = "Data Source=mxni3-app-08\\MXNILOCALAPPS;Initial Catalog=cloverces;Persist Security Info=True;User ID=sa;Password=Admin.10";
         }
         public static string CadenaConexion()
         {

@@ -149,6 +149,22 @@ namespace CloverCES
                 Close();
         }
 
-      
+        private void chbox_selectAll_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chbox_selectAll.Checked == true)
+            {
+                chbox_linean1.Checked = true;
+                chbox_linean2.Checked = true;
+                chbox_linean3.Checked = true;
+                chbox_linean4.Checked = true;
+            }
+            else
+            {
+                chbox_linean1.Checked = false;
+                chbox_linean2.Checked = false;
+                chbox_linean3.Checked = false;
+                chbox_linean4.Checked = false;
+            }
+        }
     }
 }
